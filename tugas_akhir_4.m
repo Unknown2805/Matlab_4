@@ -77,31 +77,49 @@ varargout{1} = handles.output;
 function navbar1_Callback(hObject, eventdata, handles)
     set(handles.content4,'Visible','off');
     set(handles.content3,'Visible','off');
-    cla(handles.content4_1);
+    set(handles.content2,'Visible','off');        
+    set(handles.content1,'Visible','on');
+    
+    if strcmp(get(handles.content1, 'Visible'), 'on')
+        axes(handles.content1_1);
+        imshow('content1_1.png');
+        axis off;
+    end
 
 % --- Executes on button press in navbar2.
 function navbar2_Callback(hObject, eventdata, handles)
     set(handles.content4,'Visible','off');
     set(handles.content3,'Visible','off');
-    cla(handles.content4_1);
+    set(handles.content2,'Visible','on');        
+    set(handles.content1,'Visible','off');
+    
+    if strcmp(get(handles.content2, 'Visible'), 'on')
+        axes(handles.content2_1);
+        imshow('content2_1.png');
+        axis off;
+    end
 
 % --- Executes on button press in navbar3.
 function navbar3_Callback(hObject, eventdata, handles)
-    set(handles.content4,'Visible','off');    
+    set(handles.content4,'Visible','off'); 
     set(handles.content3,'Visible','on');
+    set(handles.content2,'Visible','off');
+    set(handles.content1,'Visible','off');
     
     if strcmp(get(handles.content3, 'Visible'), 'on')
         axes(handles.content3_1);
-        imshow('rpl_logo.png');
-        axis off;
+        imshow('content3_1.png');
+        axis off;           
     end
 % --- Executes on button press in navbar4.
 function navbar4_Callback(hObject, eventdata, handles)
-    set(handles.content4,'Visible','on');
+    set(handles.content4,'Visible','on'); 
     set(handles.content3,'Visible','off');
+    set(handles.content2,'Visible','off');
+    set(handles.content1,'Visible','off');
     
     if strcmp(get(handles.content4, 'Visible'), 'on')
-        axes(handles.content3_1);
+        axes(handles.content4_1);
         imshow('unindra_logo.png');
         axis off;
     end
