@@ -22,7 +22,7 @@ function varargout = tugas_akhir_4(varargin)
 
 % Edit the above text to modify the response to help tugas_akhir_4
 
-% Last Modified by GUIDE v2.5 16-Jun-2025 15:46:38
+% Last Modified by GUIDE v2.5 25-Jun-2025 01:52:08
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -46,13 +46,22 @@ end
 
 % --- Executes just before tugas_akhir_4 is made visible.
 function tugas_akhir_4_OpeningFcn(hObject, eventdata, handles, varargin)
+    set(handles.navbar1,'BackgroundColor',[52 77 126] /255);
+    set(handles.navbar2,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar3,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar4,'BackgroundColor',[10 36 106] /255);
+    
+    set(handles.content4,'Visible','off');
+    set(handles.content3,'Visible','off');
+    set(handles.content2,'Visible','off');        
+    set(handles.content1,'Visible','on');
+    
+    if strcmp(get(handles.content4, 'Visible'), 'on')
+        axes(handles.content1_1);
+        imshow('content1_1.png');
+        axis off;
 
-if strcmp(get(handles.content4, 'Visible'), 'on')
-    axes(handles.content4_1);
-    imshow('unindra_logo.png');
-    axis off;
-
-end
+    end
 handles.output = hObject;
 
 % Update handles structure
@@ -75,6 +84,11 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in navbar1.
 function navbar1_Callback(hObject, eventdata, handles)
+    set(handles.navbar1,'BackgroundColor',[52 77 126] /255);
+    set(handles.navbar2,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar3,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar4,'BackgroundColor',[10 36 106] /255);
+    
     set(handles.content4,'Visible','off');
     set(handles.content3,'Visible','off');
     set(handles.content2,'Visible','off');        
@@ -85,15 +99,23 @@ function navbar1_Callback(hObject, eventdata, handles)
         imshow('content1_1.png');
         axis off;
     end
+     
+      
+      
 
 % --- Executes on button press in navbar2.
 function navbar2_Callback(hObject, eventdata, handles)
+    set(handles.navbar1,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar2,'BackgroundColor',[52 77 126] /255);
+    set(handles.navbar3,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar4,'BackgroundColor',[10 36 106] /255);
+
     set(handles.content4,'Visible','off');
     set(handles.content3,'Visible','off');
     set(handles.content2,'Visible','on');        
     set(handles.content1,'Visible','off');
     
-    if strcmp(get(handles.content2, 'Visible'), 'on')
+    if strcmp(get(handles.content2, 'Visible'), 'on')       
         axes(handles.content2_1);
         imshow('content2_1.png');
         axis off;
@@ -101,6 +123,11 @@ function navbar2_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in navbar3.
 function navbar3_Callback(hObject, eventdata, handles)
+    set(handles.navbar1,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar2,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar3,'BackgroundColor',[52 77 126] /255);
+    set(handles.navbar4,'BackgroundColor',[10 36 106] /255);
+    
     set(handles.content4,'Visible','off'); 
     set(handles.content3,'Visible','on');
     set(handles.content2,'Visible','off');
@@ -113,6 +140,11 @@ function navbar3_Callback(hObject, eventdata, handles)
     end
 % --- Executes on button press in navbar4.
 function navbar4_Callback(hObject, eventdata, handles)
+    set(handles.navbar1,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar2,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar3,'BackgroundColor',[10 36 106] /255);
+    set(handles.navbar4,'BackgroundColor',[52 77 126] /255);
+    
     set(handles.content4,'Visible','on'); 
     set(handles.content3,'Visible','off');
     set(handles.content2,'Visible','off');
@@ -135,3 +167,33 @@ function content4_1_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to content4_1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
+
+
+
+function edit2_Callback(hObject, eventdata, handles)
+% hObject    handle to edit2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit2 as text
+%        str2double(get(hObject,'String')) returns contents of edit2 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in hitung.
+function hitung_Callback(hObject, eventdata, handles)
+if strcmp(get(handles.content1, 'Visible'), 'on')
+    TransformatorIdeal;          
+end
