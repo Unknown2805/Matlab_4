@@ -313,7 +313,7 @@ if (v_valid + i_valid + n_valid > 2) % lebih dari 2 pecahan
         set(handles.alert, 'String', 'Input penuh / Transformator tidak ideal');
     end
 end
-if (v_valid + i_valid + n_valid == 0)
+if (valid_count < 3)
     set(handles.alert,'Visible','On');
     set(handles.alert, 'BackgroundColor', [1 0 0]);
     set(handles.alert, 'ForegroundColor', [1 1 1]);

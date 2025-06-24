@@ -56,7 +56,7 @@ function tugas_akhir_4_OpeningFcn(hObject, eventdata, handles, varargin)
     set(handles.content2,'Visible','off');        
     set(handles.content1,'Visible','on');
     
-    if strcmp(get(handles.content4, 'Visible'), 'on')
+    if strcmp(get(handles.content1, 'Visible'), 'on')
         axes(handles.content1_1);
         imshow('content1_1.png');
         axis off;
@@ -152,7 +152,7 @@ function navbar4_Callback(hObject, eventdata, handles)
     
     if strcmp(get(handles.content4, 'Visible'), 'on')
         axes(handles.content4_1);
-        imshow('unindra_logo.png');
+        imshow('content4_1.png');
         axis off;
     end
 
